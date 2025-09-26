@@ -1,67 +1,68 @@
-# Projeto: API REST de Lista de Tarefas
+# 1. Instalar o VS Code
+# - Entre no site: https://code.visualstudio.com/
+# - Clique no botão de download (baixe para Windows, Mac ou Linux dependendo do seu sistema)
+# - Instale dando "next, next, finish" até concluir
+# - Depois abra o programa
 
-## 1. Descrição do Projeto
-Uma API REST desenvolvida em Node.js e Express, a mesma foi desenvolvida para gerenciar uma lista de tarefas com um armazenamento na memória
-e possui um CRUD simples(GET, POST, PUT, DELETE).
+# 2. Instalar o Node.js
+# - Acesse: https://nodejs.org/
+# - Baixe a versão LTS (recomendada)
+# - Execute o instalador e siga os passos (next, next, finish)
+# - Para verificar se deu certo, abra o "Prompt de Comando" (CMD) e digite:
+node -v
+npm -v
+# Deve aparecer um número de versão para cada um
 
----
+# 3. Baixar o projeto da API
+# - Você pode receber o projeto em um arquivo .zip
+# - Extraia o .zip em uma pasta, exemplo: C:\projetos\tarefas
+# - Abra o VS Code e clique em "File > Open Folder", escolha a pasta do projeto
 
-## 2. Pré-requisitos
-- Visual Code Instalado para abrir o projeto;
-- Node.js instalado(abaixo intruções de como instalar);
-- Express instalado(abaixo intruções de como instalar);
-- Postman instalado para testar as rotas.
+# 4. Configurar o projeto
+# - No VS Code, clique em "Terminal > New Terminal"
+# - Vai abrir um terminal embaixo, lá digite:
+npm init -y
+npm install express
 
----
+# 5. Rodar o servidor
+# - No terminal do VS Code, digite:
+node index.js
+# Se tudo estiver certo, aparecerá algo como:
+# Servidor rodando em http://localhost:3000
 
-## 3. Instalação das Dependências
-1. Faça o download do repositório, extraia o arquivo em seguida abra a pasta no Visual Code.
-2. Com visual code aberto vamos instalar as dependencia **node.js**, abra o CMD e digite o seguinte comando **"npm i node.js"**:
-3. Com visual code aberto vamos instalar as dependencia **express**, abra o CMD e digite o seguinte comando **"npm i express"**:
-4. Para inciar o servidor digite no CMD o seguinte comando **"node index.js"**;
+# 6. Instalar o Postman
+# - Baixe aqui: https://www.postman.com/downloads/
+# - Instale normalmente (next, next, finish)
+# - Abra o Postman e faça login com Google ou crie uma conta
 
----
+# 7. Testar as rotas no Postman
+# - Clique no botão "+" no canto superior esquerdo
+# - No campo de seleção (onde aparece GET), escolha:
+#   GET, POST, PUT ou DELETE
+# - No campo de URL, digite:
+http://localhost:3000/tarefas
+# - Para PUT e DELETE use:
+http://localhost:3000/tarefas/2   (substitua "2" pelo id da tarefa; o id=1 já foi usado)
 
-## 4. Rotas disponíveis da API
+# 8. Enviar dados no POST
+# - Clique em "Body"
+# - Marque "raw"
+# - Selecione "JSON"
+# - Digite algo como:
+{
+  "titulo": "Estudar",
+  "descricao": "Ler sobre Node.js"
+}
+# - Clique em "Send"
+# - Você verá a resposta da API
 
-| **Método** |**Rota**        |**O que faz**                                                  |
-| ---------- | -------------- | ------------------------------------------------------------- |
-| **GET**    | `/tarefas`     | Lista todas as tarefas cadastradas                            |
-| **POST**   | `/tarefas`     | Cria uma nova tarefa                                          |
-| **PUT**    | `/tarefas/:id` | Atualiza uma tarefa existente pelo seu ID                     |
-| **DELETE** | `/tarefas/:id` | Exclui uma tarefa existente pelo seu ID                       |
-
----
-
-## 5. Exemplo de JSON que pode ser usado  
-**Exemplo de JSON para criar uma nova tarefa (POST):**   
-{  
-  "titulo": "Estudar para Prova",  
-  "descricao": "banco de dados e Estrutura de Dados"  
-}  
-
-**Exemplo de JSON para atualizar uma tarefa (PUT):**  
-{  
- "titulo": "Compras do Mês",  
- "descricao": "Feijão, Arroz e Batata",   
- "concluida": true  
-}  
-
-**Exemplo de JSON para deletar uma tarefa (DELETE):**  
-{  
-  "id": 3,  
-  "titulo": "Estudar Node.js",  
-  "descricao": "Ler sobre Express e APIs REST",  
-  "concluida": false  
-}  
-
----
-## 6. Tutorial de como testar no Postman
-1. Faça o dowload do Postman <a href="https://www.postman.com/downloads/">Site Postman</a>;
-2. Após ter instalado abra a aplicação e faça o login com uma conta Google ou crie um novo cadastro.
-3. Depois de logar você vai iniciar na homepage, no canto superior esquerdo vai haver um botão de **"+"** você deve apertalo.
-4. Logo em seguida você sera redirecionado para o workplace, você deve clicar no body e selecionar a opção **ROW** na caixa de seleção e selecionar **JSON**.
-5. Após ter feito as instruções acima, você vai se deparar com uma caixa de seleção escrito GET onde tentro tem as outras opções de rota (POST, PUT e DELETE), do lado tem uma caixa de texto onde você deve colocar a URL para GET e POST **"http://localhost:3000/tarefas"**. e para PUT e DELETE http://localhost:3000/N (Altere o **"N"** pelo numero de id).
-6. Para utilizar as rotas POST, PUT e DELETE utilize os exemplos em JSON no topico 5. 
-7. E Pronto a API está configurada para uso.
-
+# 9. Atualizar com PUT
+# - Onde está "POST" ao lado do link, troque para "PUT"
+# - Coloque o link:
+http://localhost:3000/tarefas/2
+# - Digite algo como:
+{
+  "concluida": true
+}
+# - Clique em "Send"
+# - Pronto! A tarefa foi atualizada com mais informações.
