@@ -21,8 +21,7 @@ npm -v
 # 4. Configurar o projeto
 # - No VS Code, clique em "Terminal > New Terminal"
 # - Vai abrir um terminal embaixo, lá digite:
-npm init -y
-npm install express
+npm install
 
 # 5. Rodar o servidor
 # - No terminal do VS Code, digite:
@@ -44,7 +43,14 @@ http://localhost:3000/tarefas
 # - Para PUT e DELETE use:
 http://localhost:3000/tarefas/2   (substitua "2" pelo id da tarefa; o id=1 já foi usado)
 
-# 8. Enviar dados no POST
+# 8. Listar todas as tarefas com GET
+# - No Postman, ao lado do link escolha "GET"
+# - No campo de URL digite:
+http://localhost:3000/tarefas
+# - Clique em "Send"
+# - A resposta será uma lista de todas as tarefas cadastradas.
+
+# 9. Enviar dados no POST
 # - Clique em "Body"
 # - Marque "raw"
 # - Selecione "JSON"
@@ -56,7 +62,7 @@ http://localhost:3000/tarefas/2   (substitua "2" pelo id da tarefa; o id=1 já f
 # - Clique em "Send"
 # - Você verá a resposta da API
 
-# 9. Atualizar com PUT
+# 10. Atualizar com PUT
 # - Onde está "POST" ao lado do link, troque para "PUT"
 # - Coloque o link:
 http://localhost:3000/tarefas/2
@@ -67,16 +73,9 @@ http://localhost:3000/tarefas/2
 # - Clique em "Send"
 # - A tarefa foi atualizada com mais informações.
 
-# 10. Deletar uma tarefa com DELETE
+# 11. Deletar uma tarefa com DELETE
 # - Onde está "POST" ou "PUT" ao lado do link, troque para "DELETE"
 # - Coloque o link:
 http://localhost:3000/tarefas/2
 # - Clique em "Send"
-# - Se tudo der certo, a tarefa com id=2 será removida da lista
-
-# 11. Listar todas as tarefas com GET
-# - No Postman, ao lado do link escolha "GET"
-# - No campo de URL digite:
-http://localhost:3000/tarefas
-# - Clique em "Send"
-# - A resposta será uma lista de todas as tarefas cadastradas.
+# - Se tudo der certo, a tarefa com id=2 será removida da lista.
