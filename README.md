@@ -65,4 +65,18 @@ http://localhost:3000/tarefas/2
   "concluida": true
 }
 # - Clique em "Send"
-# - Pronto! A tarefa foi atualizada com mais informações.
+# - A tarefa foi atualizada com mais informações.
+
+# 10. Deletar uma tarefa com DELETE
+# - Onde está "POST" ou "PUT" ao lado do link, troque para "DELETE"
+# - Coloque o link:
+http://localhost:3000/tarefas/2
+# - Clique em "Send"
+# - Se tudo der certo, a tarefa com id=2 será removida da lista
+
+# 11. Listar todas as tarefas com GET
+# - No Postman, ao lado do link escolha "GET"
+# - No campo de URL digite:
+http://localhost:3000/tarefas
+# - Clique em "Send"
+# - A resposta será uma lista de todas as tarefas cadastradas.
